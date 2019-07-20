@@ -105,6 +105,9 @@ dark header
 .header__menu__item__dark:hover {
     background-color: #000;
 }
+.header__mobile__dark {
+    display: none;
+}
 
 /*-
 light header
@@ -200,6 +203,20 @@ Smartphone
 @media (max-width: 767px){
     .header__content__dark {
         margin: 0;
+    }
+    .header__logo__dark {
+        width: 100%;
+        text-align: center;
+    }
+    .header__menu__item__dark {
+        display: inline-block;
+    }
+    .header__menu__dark {
+                text-align: center;
+        width: 100%;
+    }
+    .no-mobile {
+        display: none;
     }
 }
 
