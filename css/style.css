@@ -80,7 +80,7 @@ dark header
 }
 .header__dark {
     background-color: #333;
-    height: 60px;
+    padding: 20px;
 }
 .header__content__dark {
     color: #f5f6fa;
@@ -120,6 +120,7 @@ light header
 
 .header__light {
     background-color: #ecf0f1;
+    height: 60px;
 }
 .header__content__light {
     color: #2f3640;
@@ -171,6 +172,68 @@ light header
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
+
+/*-
+dark footer
+-*/
+.footer__dark {
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer__content__dark {
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer__content__left__dark {
+    float: left;
+}
+.footer__content__right__dark {
+    float: right;
+}
+.footer__content__right__dark ul {
+    display: inline-block;
+    margin-left: 10px;
+}
+.footer__content__dark a{
+    color: white;
+}
+.footer__content__dark a:hover{
+    opacity: 0.6;
+}
+
+/*-
+light footer
+-*/
+.footer__light {
+    background-color: #ecf0f1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer__content__light {
+    color: #2f3640;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.footer__content__left__light {
+    float: left;
+}
+.footer__content__right__light {
+    float: right;
+}
+.footer__content__right__light ul {
+    display: inline-block;
+    margin-left: 10px;
+}
+.footer__content__light a{
+    color: #2f3640;
+}
+.footer__content__light a:hover{
+    opacity: 0.6;
 }
 
 
@@ -242,8 +305,30 @@ Smartphone
         
     }
     .logo {
-        width: 100%;
-        text-align: center;
+        width: 0%;
+    }
+    .footer__content__left__dark {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    }
+    .footer__content__right__dark {
+    width: 100%;
+    display: block;
+    text-align: center;
+    }
+    
+    .footer__content__left__light {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    }
+    .footer__content__right__light {
+    width: 100%;
+    display: block;
+    text-align: center;
     }
 }
 
