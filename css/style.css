@@ -359,6 +359,9 @@ Smartphone
     .footer__dark {
         position: static;
     }
+    .footer__light {
+        position: static;
+    }
     .footer__content__left__dark {
         width: 100%;
         display: block;
