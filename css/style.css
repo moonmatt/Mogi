@@ -8,6 +8,7 @@ Default
 html,body{
     height:100%;
     font-family: 'Lato', sans-serif;
+    font-size: 1em;
 }
 /*-
 buttons
@@ -18,15 +19,13 @@ buttons
 dark
 -*/
 .dark {
-    background-color: #333;
-    color: #f5f6fa;
+    background-color: #2f3640;
 }
 /*-
 light
 -*/
 .light {
-    background-color: #eee;
-    color: #2f3640;
+    background-color: #f5f6fa;
 }
 
 .light-text {
@@ -36,7 +35,22 @@ light
 .dark-text {
     color: #2f3640;
 }
-
+.rounded {
+    border-radius: 15px;
+}
+hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/*-
+stable
+-*/
+.stable {
+    font-size: 1.15em;
+}
+/*-
+cover
+-*/
 .cover{
 	background-size: cover;
 	-o-background-size: cover;
@@ -48,6 +62,33 @@ light
 .cover__caption{ display: table; height: 100%; width:100%; position: relative; z-index:1; padding: 0 20px}
 .cover__caption__copy{ display: table-cell; vertical-align: middle; text-align: center;}
 
+/*-
+light page
+-*/
+.page__light {
+    background-color: #ecf0f1;
+    margin-top: 20px;
+}
+.page__content__light {
+    padding: 20px;
+}
+.page__content__light p {
+    margin-top: 5px;
+}
+/*-
+dark page
+-*/
+.page__dark {
+    background-color: #333;
+    margin-top: 20px;
+}
+.page__content__dark {
+    padding: 20px;
+    color: white;
+}
+.page__content__dark p {
+    margin-top: 5px;
+}
 
 
 /*-
@@ -80,7 +121,6 @@ dark header
 }
 .header__dark {
     background-color: #333;
-    padding: 20px;
 }
 .header__content__dark {
     color: #f5f6fa;
@@ -120,7 +160,6 @@ light header
 
 .header__light {
     background-color: #ecf0f1;
-    height: 60px;
 }
 .header__content__light {
     color: #2f3640;
@@ -269,6 +308,11 @@ Tablet
 Smartphone
 -----------------------------*/
 @media (max-width: 767px){
+    .header__dark {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
     .header__content__dark {
         margin: 0;
     }
@@ -282,6 +326,11 @@ Smartphone
     .header__menu__dark {
         text-align: center;
         width: 100%;
+    }
+    .header__light {
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
     .header__content__light {
         margin: 0;
@@ -307,28 +356,39 @@ Smartphone
     .logo {
         width: 0%;
     }
+    .footer__dark {
+        position: static;
+    }
     .footer__content__left__dark {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
     }
     .footer__content__right__dark {
-    width: 100%;
-    display: block;
-    text-align: center;
+        width: 100%;
+        display: block;
+        text-align: center;
     }
     
     .footer__content__left__light {
-    width: 100%;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
+        width: 100%;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
     }
     .footer__content__right__light {
-    width: 100%;
-    display: block;
-    text-align: center;
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    .page__light {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        margin-bottom: 20px;
+        border-radius: 0;
     }
 }
 
