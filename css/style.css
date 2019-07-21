@@ -80,6 +80,7 @@ dark header
 }
 .header__dark {
     background-color: #333;
+    height: 60px;
 }
 .header__content__dark {
     color: #f5f6fa;
@@ -92,6 +93,10 @@ dark header
 .header__logo__dark a {
     text-decoration: none;
     color: white;
+}
+.header__logo__img {
+    float: left;
+    padding: 10px;
 }
 .header__menu__dark {
     float: right;
@@ -212,11 +217,33 @@ Smartphone
         display: inline-block;
     }
     .header__menu__dark {
-                text-align: center;
+        text-align: center;
+        width: 100%;
+    }
+    .header__content__light {
+        margin: 0;
+    }
+    .header__logo__light {
+        width: 100%;
+        text-align: center;
+    }
+    .header__menu__item__light {
+        display: inline-block;
+    }
+    .header__menu__light {
+        text-align: center;
         width: 100%;
     }
     .no-mobile {
         display: none;
+    }
+    .header__logo__img {
+        text-align: center;
+        
+    }
+    .logo {
+        width: 100%;
+        text-align: center;
     }
 }
 

@@ -2,13 +2,15 @@
       IF YOU WANT TO MAKE IT DARK, JUST REPLACE "light" with "dark".
       IF YOU WANT IT TO NOT BE STICKY, JUST REMOVE "sticky".
       IF YOU WANT IT TO NOT BE BOXED, JUST REMOVE "boxed".
+      IF YOU WANT THE LOGO TO NOT BE SHOWED ON MOBILE, JUST PLACE "no-mobile"
+      AFTER "header__logo__color".
       I suggest you to not add more than 3 items in the right Menu.
       -->
       
       
       <div class="header__light clearfix sticky">
        <div class="header__content__light boxed">
-        <div class="header__logo__light"><a href="#">Logo</a></div>
+        <div class="header__logo__light"><a href="#"><h3>Mogi</h3></a></div>
         <div class="header__menu__light">
         <div class="header__menu__dropdown__light">
            <div class="header__menu__item__light"><ul>Dropdown</ul></div>
@@ -21,5 +23,23 @@
            <a href="#"><div class="header__menu__item__light"><ul>Item</ul></div></a>
            <a href="#"><div class="header__menu__item__light"><ul>Item</ul></div></a>
         </div>
+    </div>
+    </div>
+    
+ <!-- HEADER WITH JUST LOGO AND NAME ON THE LEFT
+      IF YOU WANT TO MAKE IT DARK, JUST REPLACE "light" with "dark".
+      IF YOU WANT IT TO NOT BE STICKY, JUST REMOVE "sticky".
+      IF YOU WANT IT TO NOT BE BOXED, JUST REMOVE "boxed".
+      IF YOU WANT TO CHANGE THE IMAGE SIZE, LIKE "50px", CHANGE THE PADDING
+      DOING (60-YOUR PIXELS):2, IN THIS CASE (60-50):2 = 5px
+      remember to use a square logo.
+      -->
+      
+      <div class="header__light clearfix sticky">
+       <div class="header__content__light boxed">
+       <div class="header__logo__img" style="padding: 10px;">
+           <img src="img/logo.png" alt="" width="40px" height="40px;">
+       </div>
+        <div class="header__logo__light logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
     </div>
     </div>
