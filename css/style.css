@@ -3,12 +3,14 @@ Default
 -----------------------------*/
 * {
     margin: 0;
+    box-sizing: border-box;
     padding: 0;
 }
 html,body{
-    height:100%;
     font-family: 'Lato', sans-serif;
-    font-size: 1em;
+    font-size: 1.015em;
+    height: 100%;
+    margin: 0;
 }
 /*-
 buttons
@@ -19,7 +21,7 @@ buttons
 dark
 -*/
 .dark {
-    background-color: #2f3640;
+    background-color: #3d3d3d;
 }
 /*-
 light
@@ -121,6 +123,7 @@ dark header
 }
 .header__dark {
     background-color: #333;
+    z-index: 999999999;
 }
 .header__content__dark {
     color: #f5f6fa;
@@ -218,9 +221,8 @@ dark footer
 -*/
 .footer__dark {
     background-color: #333;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    margin-top: 50px;
 }
 .footer__content__dark {
     color: white;
@@ -247,11 +249,11 @@ dark footer
 /*-
 light footer
 -*/
+
 .footer__light {
     background-color: #ecf0f1;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    width:100%;
+    margin-top: 50px;
 }
 .footer__content__light {
     color: #2f3640;
@@ -275,7 +277,60 @@ light footer
     opacity: 0.6;
 }
 
+/*-
+cards light
+-*/
+.cards__light {
+    max-width: 1200px; 
+    margin: 40px auto
+        
+}
+.cards__card__light {
+    width: 30%;
+    margin:0 1.5%;
+    float: left;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+}
+.cards__card__img__light {
+    width:100%; 
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+.cards__card__content__light {
+    padding: 10px 10px 15px 20px;
+}
+.cards__card__content__light p {
+    padding: 10px 0px 10px 0px;
+}
 
+/*-
+cards dark
+-*/
+.cards__dark {
+    max-width: 1200px; 
+    margin: 40px auto
+}
+.cards__card__dark {
+    width: 30%;
+    margin:0 1.5%;
+    background-color: #333;
+    float:left;
+    border-radius: 10px;
+}
+.cards__card__img__dark {
+    width:100%; 
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+.cards__card__content__dark {
+    padding: 10px 10px 15px 20px;
+    color: white;
+}
+.cards__card__content__dark p {
+    padding: 10px 0px 10px 0px;
+    color: #ecf0f1;
+}
 
 
 /*-
@@ -328,8 +383,6 @@ Smartphone
         width: 100%;
     }
     .header__light {
-        position: sticky;
-        top: 0;
         z-index: 2;
     }
     .header__content__light {
@@ -357,9 +410,6 @@ Smartphone
         width: 0%;
     }
     .footer__dark {
-        position: static;
-    }
-    .footer__light {
         position: static;
     }
     .footer__content__left__dark {
@@ -392,6 +442,12 @@ Smartphone
         padding: 0;
         margin-bottom: 20px;
         border-radius: 0;
+    }
+    .cards__card__light {
+        width: 95%; margin:5%;
+    }
+    .cards__card__dark {
+        width: 95%; margin:5%;
     }
 }
 
