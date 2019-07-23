@@ -89,6 +89,12 @@ code
     padding: 2px;
     margin-top: 10px;
 }
+.code-light {
+    background-color: #DCDDE1;
+    color: #2f3640;
+    padding: 2px;
+    margin-top: 10px;
+}
 /*-
 stable
 -*/
@@ -522,18 +528,25 @@ Smartphone
         text-align: center;
     }
     .page__light {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        width: 90%;
+        margin: 5%;
         padding: 0;
         margin-bottom: 20px;
         border-radius: 0;
     }
+    .page__dark {
+        width: 90%;
+        margin: 5%;
+        padding: 0;
+        margin-bottom: 20px;
+        border-radius: 0;
+    }
+    
     .cards__card__light {
-        width: 95%; margin:5%;
+        width: 90%; margin:5%;
     }
     .cards__card__dark {
-        width: 95%; margin:5%;
+        width: 90%; margin:5%;
     }
 }
 
