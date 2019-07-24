@@ -12,6 +12,7 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
 /*-
 medium buttons
 -*/
@@ -81,6 +82,27 @@ big buttons
 .btn:hover {opacity: 0.5;}
 
 /*-
+normalize button
+-*/
+button {
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #0069ed;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+    transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/*-
 code
 -*/
 .code-dark {
@@ -94,6 +116,15 @@ code
     color: #2f3640;
     padding: 2px;
     margin-top: 10px;
+}
+/*-
+lists
+-*/
+ul {
+    padding-left: 20px;
+}
+ol {
+    padding-left: 20px;
 }
 /*-
 stable
@@ -156,11 +187,28 @@ cover
 .cover__caption__copy{ display: table-cell; vertical-align: middle; text-align: center;}
 
 /*-
+banner
+-*/
+.banner{
+    height: 30%;
+	background-size: cover;
+	-o-background-size: cover;
+	-moz-background-size: cover;
+	background-position: center center;
+	position:relative;
+}
+.banner__filter{ background: #000; width:100%; height:100%; position: absolute; z-index: 0; opacity: 0.5; }
+.banner__caption{ display: table; height: 100%; width:100%; position: relative; z-index:1; padding: 0 20px}
+.banner__caption__copy{ display: table-cell; vertical-align: middle; text-align: center;}
+
+
+/*-
 light page
 -*/
 .page__light {
     background-color: #DCDDE1;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .page__content__light {
     padding: 20px;
@@ -174,6 +222,7 @@ dark page
 .page__dark {
     background-color: #333;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .page__content__dark {
     padding: 20px;
@@ -188,7 +237,6 @@ dark page
 dark header
 -*/
 .header__menu__dropdown__content__dark {
-    display: none;
     position: absolute;
     background-color: #333;
     min-width: 160px;   
@@ -422,6 +470,28 @@ cards dark
 .cards__card__content__dark p {
     padding: 10px 0px 10px 0px;
     color: #DCDDE1;
+}
+
+/*-
+form
+-*/
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+font-size: 16px;
+}
+input[type=submit] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 
