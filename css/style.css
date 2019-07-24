@@ -120,10 +120,7 @@ code
 /*-
 lists
 -*/
-ul {
-    padding-left: 20px;
-}
-ol {
+list {
     padding-left: 20px;
 }
 /*-
