@@ -15,6 +15,10 @@ html {
 body {
     height: 100vh;
 }
+.img {
+    width: 100%;
+    height: auto;
+}
 /*-
 medium buttons
 -*/
@@ -254,6 +258,8 @@ light page
     background-color: #DCDDE1;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .page__content__light {
     padding: 20px;
@@ -655,6 +661,9 @@ Smartphone
         padding: 0;
         margin-bottom: 20px;
         border-radius: 0;
+    }
+    .rounded {
+        border-radius: 15px;
     }
     
     .cards__card__light {

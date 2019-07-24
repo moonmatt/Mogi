@@ -10,27 +10,18 @@
 
 
 </head>
-<body class="dark">
-                 
-      <div class="header__dark clearfix sticky">
-       <div class="header__content__dark boxed">
-        <div class="header__logo__dark"><a href="#"><strong>Mogi</strong></a></div>
-        <div class="header__menu__dark">
-                <div class="header__menu__dropdown__dark">
-           <div class="header__menu__item__dark"><ul>Dropdown</ul></div>
-             <div class="header__menu__dropdown__content__dark">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            </div>
-            </div>
-           <a href="#"><div class="header__menu__item__dark"><ul>Item</ul></div></a>
-           <a href="#"><div class="header__menu__item__dark"><ul>Item</ul></div></a>
-        </div>
+<body class="light">
+
+<div class="header__light clearfix sticky" style="height: 60px;">
+       <div class="header__content__light boxed">
+       <div class="header__logo__img" style="padding: 10px;">
+           <img src="img/logo.png" alt="" width="40px" height="40px;">
+       </div>
+        <div class="header__logo__light logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
     </div>
     </div>
-                 
-       	   	<div class="cover parallax" style="height:50%; background-image: url('https://source.unsplash.com/category/buildings');">
+
+    <div class="cover parallax" style="height:50%; background-image: url('https://source.unsplash.com/category/buildings');">
 		<div class="cover__filter"></div>
 		<div class="cover__caption">
 			<div class="cover__caption__copy white-text"> 
@@ -40,27 +31,28 @@
 			</div>
 		</div>
 	</div>
-   
-       <div class="cards__dark clearfix">
-        <div class="cards__card__dark shadow">
-        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__dark">
-        <div class="cards__card__content__dark">
+
+<div class="cards__light clearfix">
+        <div class="cards__card__light shadow">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
             <h1>Title</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
             <a href="" class="btn medium-white"> Call to action</a>
         </div>
         </div>
-        <div class="cards__card__dark shadow">
-        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__dark">
-        <div class="cards__card__content__dark">
+    <div class="cards__card__light shadow">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
             <h1>Title</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
             <a href="" class="btn medium-white"> Call to action</a>
         </div>
         </div>
-                <div class="cards__card__dark shadow">
-        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__dark">
-        <div class="cards__card__content__dark">
+        
+    <div class="cards__card__light shadow">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
             <h1>Title</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
             <a href="" class="btn medium-white"> Call to action</a>
@@ -68,16 +60,6 @@
         </div>
     </div>
     
-    <div class="page__dark boxed rounded shadow">
-       <div class="page__content__dark">
-          <h1>Random title</h1>
-          <h2></h2>
-           <p class="stable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam amet quam quo magnam deleniti culpa illo iste libero officia cum incidunt repudiandae in ea, accusantium, laborum, placeat ipsum ex iusto!</p>
-           <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dolore odit vel, doloribus dolores veritatis illum iusto nemo iste magni corporis corrupti explicabo veniam eius officia culpa sequi quos cumque.</p>
-       </div>
-   </div>
-   
    <div class="banner parallax" style="height:30%; background-image: url('https://source.unsplash.com/category/buildings');">
        <div class="banner__filter"></div>
        <div class="banner__caption">
@@ -88,28 +70,50 @@
        </div>
    </div>
    
-   
-<div class="grid clearfix">
-   <div class="grid-2-25">INSERT CONTENT HERE</div>
-   <div class="grid-2-75">INSERT CONTENT HERE</div>
+      <div class="page__light boxed rounded shadow">
+       <div class="grid clearfix">
+   <div class="grid-2">
+              <form action="">
+        <label for="name">First Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name..">
+
+    <label for="lname">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit" class="btn medium-white">
+      </form>
+   </div>
+   <div class="grid-2">
+              <div class="page__content__light">
+          <h1>Random title</h1>
+          <h2></h2>
+           <p class="stable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam amet quam quo magnam deleniti culpa illo iste libero officia cum incidunt repudiandae in ea, accusantium, laborum, placeat ipsum ex iusto!</p>
+           <hr>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dolore odit vel, doloribus dolores veritatis illum iusto nemo iste magni corporis corrupti explicabo veniam eius officia culpa sequi quos cumque.</p>
+       </div>
+   </div>
 </div>
+   </div>
    
-    
-    
-              <div class="footer__dark">
-        <div class="footer__content__dark boxed clearfix">
-        <div class="footer__content__left__dark">
-            <p>Designed by <a href="https://twitter.com/mttglvtt">@mttglvtt <i class="fas fa-heart"></i></a></p>
+             <div class="footer__light">
+        <div class="footer__content__light boxed clearfix">
+        <div class="footer__content__left__light">
+            <p>&copy; 2019 - Matteo Galavotti</p>
         </div>
-                <div class="footer__content__right__dark">
-            <a href="https://twitter.com/mttglvtt"><ul><i class="fab fa-twitter"></i></ul></a>
-            <a href="https://github.com/mttglvtt/Mogi"><ul><i class="fab fa-github"></i></ul></a>
-            <a href="https://matteogalavotti.com/"><ul><i class="fab fa-chrome"></i></ul></a>
+                <div class="footer__content__right__light">
+            <a href="#"><ul>Terms</ul></a>
+            <a href="#"><ul>About</ul></a>
+            <a href="#"><ul>Portfolio</ul></a>
         </div>
         </div>
     </div>
-    
-    
    
 </body>
 </html>
