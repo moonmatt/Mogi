@@ -6,13 +6,15 @@ Default
     box-sizing: border-box;
     padding: 0;
 }
-html, body {
+html {
     font-family: 'Lato', sans-serif;
     font-size: 1.015em;
     height: 100%;
     margin: 0;
 }
-
+body {
+    height: 100vh;
+}
 /*-
 medium buttons
 -*/
@@ -93,7 +95,7 @@ button {
     background: #0069ed;
     color: #ffffff;
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 1.015em;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 
@@ -117,6 +119,52 @@ code
     padding: 2px;
     margin-top: 10px;
 }
+/*-
+grid
+-*/
+.grid {
+    margin: 20px;
+}
+.grid-2 {
+    display: grid;
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.grid-3{
+    display: grid;
+    width: 33.33%;
+    float: left;
+    text-align: center;
+}
+.grid-4{
+    display: grid;
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.grid-2-25 {
+    display: grid;
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.grid-2-75 {
+    display: grid;
+    width: 75%;
+    float: left;
+    text-align: center;
+}
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+
 /*-
 lists
 -*/
@@ -155,11 +203,11 @@ light
     background-color: #f5f6fa;
 }
 
-.light-text {
+.white-text {
     color: #f5f6fa;
 }
 
-.dark-text {
+.black-text {
     color: #2f3640;
 }
 .rounded {
@@ -235,6 +283,7 @@ dark header
 -*/
 .header__menu__dropdown__content__dark {
     position: absolute;
+    display: none;
     background-color: #333;
     min-width: 160px;   
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -288,9 +337,6 @@ dark header
 }
 .header__menu__item__dark:hover {
     background-color: #000;
-}
-.header__mobile__dark {
-    display: none;
 }
 
 /*-
@@ -352,7 +398,10 @@ light header
     text-decoration: none;
     display: block;
 }
-
+.header__menu__form {
+    position: relative;
+    display: inline-block;
+}
 /*-
 dark footer
 -*/
@@ -474,13 +523,12 @@ form
 -*/
 input, select {
   width: 100%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
-font-size: 16px;
+  font-size: 1.015em;
 }
 input[type=submit] {
   width: 100%;
@@ -496,9 +544,9 @@ input[type=submit] {
 sticky
 -*/
 .sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100%;
+    width: 100%;
 
 }
 /*-
@@ -614,6 +662,10 @@ Smartphone
     }
     .cards__card__dark {
         width: 90%; margin:5%;
+    }
+    .grid-2,.grid-3,.grid-4,.grid-2-25,.grid-2-75,.grid {
+        width: 100%;
+        margin: 0;
     }
 }
 
