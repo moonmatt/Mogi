@@ -19,6 +19,28 @@ body {
     width: 100%;
     height: auto;
 }
+.menu__lateral__light {
+    float: left;
+    width: 17%;
+    height: 100%;
+    display: block;
+    background-color: #DCDDE1;
+}
+.menu__lateral__content__light {
+    padding: 15px;
+}
+
+.menu__lateral__dark {
+    background-color: #333;
+    width: 17%;
+    float: left;
+    display: block;
+    height: 100%;
+}
+.menu__lateral__content__dark {
+    padding: 15px;
+    color: white;
+}
 /*-
 medium buttons
 -*/
@@ -111,6 +133,14 @@ button {
 /*-
 code
 -*/
+.snippet {
+    background-color: #333;
+    color: darkgray;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    white-space: pre-wrap;
+}
 .code-dark {
     background-color: #333;
     color: darkgray;
@@ -172,7 +202,7 @@ grid
 /*-
 lists
 -*/
-list {
+.list {
     padding-left: 20px;
 }
 /*-
@@ -199,12 +229,29 @@ dark
 -*/
 .dark {
     background-color: #3d3d3d;
+    color: white;
+}
+.dark a {
+    color: white;
+    text-decoration: none;
+}
+h1 {
+    margin-top: 10px;
+}
+.content p {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 /*-
 light
 -*/
 .light {
     background-color: #f5f6fa;
+    color: black;
+}
+.light a {
+    color: black;
+    text-decoration: none;
 }
 
 .white-text {
@@ -315,6 +362,7 @@ dark header
 .header__dark {
     background-color: #333;
     z-index: 999999999;
+    width: 100%;
 }
 .header__content__dark {
     color: #f5f6fa;
@@ -352,6 +400,7 @@ light header
 .header__light {
     background-color: #DCDDE1;
     z-index: 9999999;
+    width: 100%;
 }
 .header__content__light {
     color: #2f3640;
@@ -550,8 +599,7 @@ sticky
 -*/
 .sticky {
   position: fixed;
-  top: 0;
-    width: 100%;
+  top: 0; 
 
 }
 /*-
@@ -674,6 +722,21 @@ Smartphone
     .grid-2,.grid-3,.grid-4,.grid-2-25,.grid-2-75,.grid {
         width: 100%;
         margin: 0;
+    }
+    .menu__lateral__dark {
+    background-color: #333;
+    width: 100%;
+    position: static;
+    float: inherit;
+    display: block;
+    height: auto;
+}
+    .snippet {
+        word-break: keep-all;
+        overflow-x: scroll;
+    }
+    .content {
+        margin: 20px;
     }
 }
 

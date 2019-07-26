@@ -19,6 +19,13 @@ body {
     width: 100%;
     height: auto;
 }
+
+.menu__lateral__dark {
+    background-color: white;
+    width: 17%;
+    float: left;
+    display: block;
+}
 /*-
 medium buttons
 -*/
@@ -199,12 +206,14 @@ dark
 -*/
 .dark {
     background-color: #3d3d3d;
+    color: white;
 }
 /*-
 light
 -*/
 .light {
     background-color: #f5f6fa;
+    color: #2f3640;
 }
 
 .white-text {
