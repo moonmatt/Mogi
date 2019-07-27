@@ -18,7 +18,8 @@
         <hr>
         <ul class="list">
             <a href="#style"><li>Integrate the Style</li></a>
-            <a href="#headers"><li>Headers</li></a>
+            <a href="#header"><li>Headers</li></a>
+            <a href="#cover"><li>Cover</li></a>
         </ul>
     </div>
 </div>
@@ -31,7 +32,7 @@
        <div class="header__logo__img" style="padding: 10px;">
            <img src="img/logo.png" alt="" width="40px" height="40px;">
        </div>
-        <div class="header__logo__light logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
+        <div class="header__logo__light logo" style="padding-left: 0px;"><a href="#"><strong>Mogi</strong></a></div>
     </div>
     </div>
 <div class="snippet">
@@ -116,7 +117,151 @@
     &lt;/div&gt;
 </code>
 </div>
+  
+<h1>Header with elements</h1>
+  <p>A menu with a text on the left and elements on the right, including dropdowns and buttons.</p>
+      <div class="header__light clearfix">
+       <div class="header__content__light">
+        <div class="header__logo__light"><a href="#"><strong>Mogi</strong></a></div>
+        <div class="header__menu__light">
+        <div class="header__menu__dropdown__light">
+           <div class="header__menu__item__light"><ul>Dropdown</ul></div>
+             <div class="header__menu__dropdown__content__light">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+            </div>
+           <a href="#"><div class="header__menu__item__light"><ul>Item</ul></div></a>
+           <a href="#"><div class="header__menu__item__light"><ul>Item</ul></div></a>
+        </div>
+    </div>
+    </div>
+<div class="snippet">
+   <code>
+&lt;div class="header__light clearfix sticky"&gt;
+    &lt;div class="header__content__light boxed"&gt;
+        &lt;div class="header__logo__light"&gt;&lt;a href="#"&gt;&lt;h3&gt;Mogi&lt;/h3&gt;&lt;/a&gt;&lt;/div&gt;
+        &lt;div class="header__menu__light"&gt;
+        &lt;div class="header__menu__dropdown__light"&gt;
+           &lt;div class="header__menu__item__light"&gt;&lt;ul&gt;Dropdown&lt;/ul&gt;&lt;/div&gt;
+             &lt;div class="header__menu__dropdown__content__light"&gt;
+            &lt;a href="#"&gt;Link 1&lt;/a&gt;
+            &lt;a href="#"&gt;Link 2&lt;/a&gt;
+            &lt;a href="#"&gt;Link 3&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+           &lt;a href="#"&gt;&lt;div class="header__menu__item__light"&gt;&lt;ul&gt;Item&lt;/ul&gt;&lt;/div&gt;&lt;/a&gt;
+           &lt;a href="#"&gt;&lt;div class="header__menu__item__light"&gt;&lt;ul&gt;Item&lt;/ul&gt;&lt;/div&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+</code>
+</div>
    
+<h1 id="cover">Cover with Title, subtitle and Button</h1>
+  <p>A cover with vertical-aligned content. You can use a custom background image (with parallax effect) or even change the color of the text replacing "white-text" with "black-text". You can also change the button's color and size, using <a href="#buttons">buttons</a></p>
+<div class="cover parallax" style="height:500px; background-image: url('https://source.unsplash.com/category/buildings');">
+		<div class="cover__filter"></div>
+		<div class="cover__caption">
+			<div class="cover__caption__copy white-text"> 
+				<h1>Primary message of the Home </h1>
+				<h3>Subtitle of the home page</h3> <br>
+                <a href="" class="btn medium-white"><span class="black-text"> Call to action</span></a>
+			</div>
+		</div>
+	</div>
+<div class="snippet">
+   <code>
+&lt;div class="cover parallax" style="height:50%; background-image: url('https://source.unsplash.com/category/buildings');"&gt;
+    &lt;div class="cover__filter"&gt;&lt;/div&gt;
+    &lt;div class="cover__caption"&gt;
+        &lt;div class="cover__caption__copy white-text"&gt; 
+            &lt;h1&gt;Primary message of the Home &lt;/h1&gt;
+            &lt;h3&gt;Subtitle of the home page&lt;/h3&gt; &lt;br&gt;
+            &lt;a href="" class="btn medium-white"&gt; Call to action&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</div>
+   
+<h1 id="cards">Cards with Image, title, subtitle and Button</h1>
+  <p>A set of 3 cards. You can use a custom background image. You can also change the button's color and size, using <a href="#buttons">buttons</a></p>
+
+    <div class="cards__light clearfix">
+        <div class="cards__card__light">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
+            <a href="" class="btn medium-white"><span class="black-text"> Call to action</span></a>
+        </div>
+        </div>
+    <div class="cards__card__light">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
+            <a href="" class="btn medium-white"><span class="black-text"> Call to action</span></a>
+        </div>
+        </div>
+        
+    <div class="cards__card__light">
+        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img__light">
+        <div class="cards__card__content__light">
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
+            <a href="" class="btn medium-white"><span class="black-text"> Call to action</span></a>
+        </div>
+        </div>
+    </div>
+
+<div class="snippet">
+   <code>
+&lt;div class="cover parallax" style="height:50%; background-image: url('https://source.unsplash.com/category/buildings');"&gt;
+    &lt;div class="cover__filter"&gt;&lt;/div&gt;
+    &lt;div class="cover__caption"&gt;
+        &lt;div class="cover__caption__copy white-text"&gt; 
+            &lt;h1&gt;Primary message of the Home &lt;/h1&gt;
+            &lt;h3&gt;Subtitle of the home page&lt;/h3&gt; &lt;br&gt;
+            &lt;a href="" class="btn medium-white"&gt; Call to action&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</div>
+    
+<h1 id="banner">Banner with background image, title and Button</h1>
+  <p>A banner with parallax background image, a title and a call to action. You can also change the button's color and size, using <a href="#buttons">buttons</a>.
+   If you want to change the image and the height, just edit the style.</p>
+
+   <div class="banner parallax" style="height:200px; background-image: url('https://source.unsplash.com/category/buildings');">
+       <div class="banner__filter"></div>
+       <div class="banner__caption">
+           <div class="banner__caption__copy white-text">
+               <h1>What a cool title!</h1>
+               <a href="" class="btn medium-white"><span class="black-text">Subscribe now!</span></a>
+           </div>
+       </div>
+   </div>
+
+<div class="snippet">
+   <code>
+   &lt;div class="banner parallax" style="height:30%; background-image: url('https://source.unsplash.com/category/buildings');"&gt;
+       &lt;div class="banner__filter"&gt;&lt;/div&gt;
+       &lt;div class="banner__caption"&gt;
+           &lt;div class="banner__caption__copy white-text"&gt;
+               &lt;h1&gt;What a cool title!&lt;/h1&gt;
+               &lt;a href="" class="btn medium-white"&gt;Subscribe now!&lt;/a&gt;
+           &lt;/div&gt;
+       &lt;/div&gt;
+   &lt;/div&gt;
+
+</code>
+</div>   
+
     </div>
     
     

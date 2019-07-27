@@ -229,7 +229,6 @@ dark
 -*/
 .dark {
     background-color: #3d3d3d;
-    color: white;
 }
 .dark a {
     color: white;
@@ -539,6 +538,7 @@ cards light
 }
 .cards__card__content__light {
     padding: 10px 10px 15px 20px;
+    color: #000;
 }
 .cards__card__content__light p {
     padding: 10px 0px 10px 0px;
@@ -624,7 +624,6 @@ Smartphone
 -----------------------------*/
 @media (max-width: 767px){
     .header__dark {
-        position: sticky;
         top: 0;
         z-index: 2;
     }
