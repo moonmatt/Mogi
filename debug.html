@@ -9,32 +9,37 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
 
     <script src="js/style.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <div class="fixedbutton">
-  <div id="credits"><i class="fas fa-book"></i></div>
-   <div id="darkMenu" onclick="swapStyleSheet('css/dark.css')"><i class="fas fa-moon"></i></div>
-   <div id="lightMenu" onclick="swapStyleSheet('css/light.css')"><i class="fas fa-lightbulb"></i></div>
-    <div onclick="myFunction()" class="btn medium-gray Menu"><i class="fas fa-ellipsis-h"></i></div>
+<label class="switch" data-checked="Yes" data-unchecked="No">
+  <input type="checkbox" id="checkbox" checked onclick="updateTheme()" >
+  <span class="slider round"></span>
+</label>
 </div>
-
-
 <script>
-function myFunction() {
-  var x = document.getElementById("darkMenu");
-  var y = document.getElementById("lightMenu");
-  var c = document.getElementById("credits");
-  if (x.style.display === "inline-block") {
-    x.style.display = "none";
-    y.style.display = "none";
-    c.style.display = "none";
-  } else {
-    x.style.display = "inline-block";
-    y.style.display = "inline-block";
-    c.style.display = "inline-block";
-  }
+function load() {
+    var checked = JSON.parse(localStorage.getItem('checkbox'));
+    document.getElementById("checkbox").checked = checked;
 }
-</script>
+function save() {
+    var checkb = document.getElementById('checkbox');
+    localStorage.setItem('checkbox', checkbox.checked);
+}
+function updateTheme() {
+    var checkBox = document.getElementById("checkbox");
+    if(checkBox.checked) { 
+        swapStyleSheet('css/dark.css') 
+        save();
+    } else {
+        swapStyleSheet('css/light.css')
+        save();
+   } 
+}
+load();
+updateTheme();
+    </script>
 <body>
       <div class="header clearfix sticky">
        <div class="header__content boxed">
