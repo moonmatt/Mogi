@@ -3,18 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Mogi Framework - fast and free</title>
-    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/light.css">
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/dark.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
-<script>
-function swapStyleSheet(sheet){
-	document.getElementById('pagestyle').setAttribute('href', sheet);
-}
-</script>
+
+    <script src="js/style.js"></script>
 </head>
 
+<div class="fixedbutton">
+  <div id="credits"><i class="fas fa-book"></i></div>
+   <div id="darkMenu" onclick="swapStyleSheet('css/dark.css')"><i class="fas fa-moon"></i></div>
+   <div id="lightMenu" onclick="swapStyleSheet('css/light.css')"><i class="fas fa-lightbulb"></i></div>
+    <div onclick="myFunction()" class="btn medium-gray Menu"><i class="fas fa-ellipsis-h"></i></div>
+</div>
 
+
+<script>
+function myFunction() {
+  var x = document.getElementById("darkMenu");
+  var y = document.getElementById("lightMenu");
+  var c = document.getElementById("credits");
+  if (x.style.display === "inline-block") {
+    x.style.display = "none";
+    y.style.display = "none";
+    c.style.display = "none";
+  } else {
+    x.style.display = "inline-block";
+    y.style.display = "inline-block";
+    c.style.display = "inline-block";
+  }
+}
+</script>
 <body>
       <div class="header clearfix sticky">
        <div class="header__content boxed">
@@ -84,7 +104,7 @@ function swapStyleSheet(sheet){
               <div class="footer">
         <div class="footer__content boxed clearfix">
         <div class="footer__content__left">
-            <p>Designed by <a href="https://twitter.com/mooonmatt"><i class="fas fa-moon"></i>matt</a></p>
+            <p>Designed by <a href="https://twitter.com/mooonmatt"><i class="fas fa-moon"></i>moonmatt</a></p>
         </div>
                 <div class="footer__content__right">
             <a href="https://twitter.com/mooonmatt"><ul><i class="fab fa-twitter"></i></ul></a>

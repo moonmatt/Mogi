@@ -21,7 +21,22 @@ body {
     width: 100%;
     height: auto;
 }
-
+.fixedbutton {
+    position: fixed;
+    z-index: 999999999999999999999999999999;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+#darkMenu {
+    display: none; background: #353b48; color:white;padding: 10px 20px; border-radius:3px; text-decoration: none; opacity: 1; transition: 0.3s; margin-top: 5px;
+}
+#lightMenu {
+    display: none; background: #353b48; color:white;padding: 10px 20px; border-radius:3px; text-decoration: none; opacity: 1; transition: 0.3s; margin-top: 5px;
+}
+#credits {
+    display: none; background: #353b48; color:white;padding: 10px 20px; border-radius:3px; text-decoration: none; opacity: 1; transition: 0.3s; margin-top: 5px;
+}
 /*-
 medium buttons
 -*/
