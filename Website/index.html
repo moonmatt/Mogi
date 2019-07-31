@@ -10,6 +10,17 @@
 
     <script src="js/style.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+function responsive() {
+    if (document.getElementById("header__menu").classList != "mystyle") {
+        document.getElementById("header__menu").classList = "mystyle";
+    } else {
+        document.getElementById("header__menu").classList.remove("mystyle");
+        document.getElementById("header__menu").classList = "no-mobile";
+    }
+}
+</script>
 </head>
 
 <div class="fixedbutton">
@@ -25,10 +36,11 @@
            <img src="img/logo.png" alt="" width="40px" height="40px;">
        </div>
         <div class="header__logo logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
-        <div class="header__menu">
+        <div class="header__menu" id="header__menu" >
            <a href="#"><div class="header__menu__item"><ul>Download</ul></div></a>
            <a href="#"><div class="header__menu__item"><ul>Docs</ul></div></a>
         </div>
+    <a href="#"><div class="header__menu__item responsiveicon" onclick="responsive()"><ul><i class="fas fa-bars"></i></ul></div></a>
     </div>
     </div>
     

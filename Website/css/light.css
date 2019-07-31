@@ -489,7 +489,9 @@ boxed
     margin-right: 20%;
 }
 
-
+.responsiveicon {
+    display: none;
+}
 /*-----------------------------
 Tablet
 -----------------------------*/
@@ -518,6 +520,7 @@ Smartphone
     .header__menu {
         text-align: center;
         width: 100%;
+        display: none;
     }
     .no-mobile {
         display: none;
@@ -546,6 +549,14 @@ Smartphone
         margin-bottom: 20px;
         border-radius: 0;
     }
+    .mystyle {
+        display: grid;
+        position: absolute;
+        margin-top: 60px;
+        background-color: #DCDDE1;
+        width: 100%;
+        
+    }
     .rounded {
         border-radius: 15px;
     }
@@ -559,6 +570,10 @@ Smartphone
         width: 100%;
         margin: 0;
     }
+        .responsiveicon {
+    display: inline-block;
+    float: right;
+}
 }
 
 

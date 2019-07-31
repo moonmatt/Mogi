@@ -488,7 +488,9 @@ boxed
     margin-right: 20%;
 }
 
-
+.responsiveicon {
+    display: none;
+}
 /*-----------------------------
 Tablet
 -----------------------------*/
@@ -508,16 +510,15 @@ Smartphone
         margin: 0;
     }
     .header__logo {
-        width: 100%;
         text-align: center;
     }
     .header__menu__item {
-        display: inline-block;
+     display: inline-block;
     }
     .header__menu {
         text-align: center;
-        width: 100%;
         background-color: #333;
+        display: none;
     }
     .no-mobile {
         display: none;
@@ -542,6 +543,14 @@ Smartphone
         display: block;
         text-align: center;
     }
+    .mystyle {
+        display: grid;
+        position: absolute;
+        margin-top: 60px;
+        background-color: #333;
+        width: 100%;
+        
+    }
     .page {
         width: 90%;
         margin: 5%;
@@ -559,6 +568,10 @@ Smartphone
         width: 100%;
         margin: 0;
     }
+    .responsiveicon {
+    display: inline-block;
+    float: right;
+}
 }
 
 
