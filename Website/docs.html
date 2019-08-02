@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation - Mogi Framework</title>
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/mogi.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+<script src="js/style.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+function responsive() {
+    if (document.getElementById("header__menu").classList != "mystyle") {
+        document.getElementById("header__menu").classList = "mystyle";
+    } else {
+        document.getElementById("header__menu").classList.remove("mystyle");
+        document.getElementById("header__menu").classList = "no-mobile";
+    }
+}
+</script>
+</head>
+
+<div class="fixedbutton">
+  <select id="themeBox" onclick="themeUpdate()">
+    <option value="Dark" id="dark" selected>Dark</option>
+    <option value="Light" id="light">Light</option>
+    <option value="Mogi" id="mogi">Mogi</option>
+  </select>
+</div>
+
+<body>
+      <div class="header clearfix sticky" style="height: 60px;">
+       <div class="header__content boxed">
+       <div class="header__logo__img" style="margin: 10px;">
+           <img src="img/logo.png" alt="" width="40px" height="40px;">
+       </div>
+        <div class="header__logo logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
+        <div class="header__menu" id="header__menu" >
+           <a href="#"><div class="header__menu__item"><ul>Download</ul></div></a>
+           <a href="#"><div class="header__menu__item"><ul>Docs</ul></div></a>
+        </div>
+    <a href="#"><div class="header__menu__item responsiveicon" onclick="responsive()"><ul><i class="fas fa-bars"></i></ul></div></a>
+    </div>
+    </div>
+    
+    
+<div class="cover parallax" style="height:30%; background-image: url('img/bg.jpg');">
+		<div class="cover__filter"></div>
+		<div class="cover__caption">
+			<div class="cover__caption__copy white-text">
+				<h1>Documentation.</h1>
+				<h3>here you'll find all the components</h3> <br>
+			</div>
+		</div>
+	</div>
+              
+   <div class="page boxed rounded">
+       <div class="page__content">
+          <h1>Download the package...</h1>
+          <h2></h2>
+           <p class="stable">First of all integrate the package, in order to do this, click on the item on the menu "Download" and look for the newest version. Once you've done that, extract the zip file and open index.html, then copy the code from here, and paste it inside of the body. <br>
+           Mogi has 3 default themes, which you can find on the bottom right of the screen. It uses a Js script to switch between the Css pages, so if you'd like to create your own theme, just create a copy of an existing css page (dark.css, light.css or mogi.css) and edit whatever you want.</p>
+       </div>
+   </div>    
+
+  <!-- Headers -->
+  
+    <div class="header clearfix">
+       <div class="header__content boxed">
+               <div class="header__logo__img" style="margin: 10px;">
+           <img src="img/logo.png" alt="" width="40px" height="40px;">
+       </div>
+        <div class="header__logo logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
+        <div class="header__menu">
+        <div class="header__menu__dropdown">
+           <div class="header__menu__item"><ul>Dropdown</ul></div>
+             <div class="header__menu__dropdown__content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            </div>
+            </div>
+           <a href="#"><div class="header__menu__item"><ul>Item</ul></div></a>
+           <a href="#"><div class="header__menu__item"><ul>Item</ul></div></a>
+        </div>
+            <a href="#"><div class="header__menu__item responsiveicon"><ul><i class="fas fa-bars"></i></ul></div></a>
+    </div>
+    </div>
+  
+   <div class="page boxed rounded">
+       <div class="page__content">
+          <h1>Header</h1>
+          <h3>with logo, dropdown and items</h3>
+           <p class="stable">A responsive and sticky menu with a custom logo (40x40px), a dropdown and some items. If you're using a mobile device, there will be a button on the right, if you click on it all the items will be shown.</p>
+<div class="code">&ltdiv class="header clearfix sticky"&gt
+    &ltdiv class="header__content boxed"&gt
+        &ltdiv class="header__logo__img" style="margin: 10px;"&gt
+           &ltimg src="img/logo.png" alt="" width="40px" height="40px;"&gt
+        &lt/div&gt
+        &ltdiv class="header__logo logo" style="padding-left: 0px;"&gt&lta href="#"&gt&lth3&gtMogi&lt/h3&gt&lt/a&gt&lt/div&gt
+        &ltdiv class="header__menu"&gt
+        &ltdiv class="header__menu__dropdown"&gt
+           &ltdiv class="header__menu__item"&gt&ltul&gtDropdown&lt/ul&gt&lt/div&gt
+             &ltdiv class="header__menu__dropdown__content"&gt
+                &lta href="#"&gtLink 1&lt/a&gt
+                &lta href="#"&gtLink 2&lt/a&gt
+                &lta href="#"&gtLink 3&lt/a&gt
+            &lt/div&gt
+        &lt/div&gt
+           &lta href="#"&gt&ltdiv class="header__menu__item"&gt&ltul&gtItem&lt/ul&gt&lt/div&gt&lt/a&gt
+           &lta href="#"&gt&ltdiv class="header__menu__item"&gt&ltul&gtItem&lt/ul&gt&lt/div&gt&lt/a&gt
+        &lt/div&gt
+        &lta href="#"&gt&ltdiv class="header__menu__item responsiveicon"&gt&ltul&gt&lti class="fas fa-bars"&gt&lt/i&gt&lt/ul&gt&lt/div&gt&lt/a&gt
+    &lt/div&gt
+</div>
+        </div>
+       </div>
+    
+    <div class="header clearfix">
+       <div class="header__content boxed">
+               <div class="header__logo__img" style="margin: 10px;">
+           <img src="img/logo.png" alt="" width="40px" height="40px;">
+       </div>
+        <div class="header__logo logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
+    </div>
+    </div>              
+
+<div class="page boxed rounded">
+       <div class="page__content">
+          <h1>Header</h1>
+          <h3>with just the logo</h3>
+           <p class="stable">A responsive and sticky menu with a custom logo (40x40px)</p>
+<div class="code">&ltdiv class="header clearfix sticky"&gt
+       &ltdiv class="header__content boxed"&gt
+               &ltdiv class="header__logo__img" style="margin: 10px;"&gt
+           &ltimg src="img/logo.png" alt="" width="40px" height="40px;"&gt
+       &lt/div&gt
+        &ltdiv class="header__logo logo" style="padding-left: 0px;"&gt&lta href="#"&gt&lth3&gtMogi&lt/h3&gt&lt/a&gt&lt/div&gt
+    &lt/div&gt
+    &lt/div&gt 
+</div>
+        </div>
+       </div>
+
+             
+<!-- Cover -->
+
+<div class="cover parallax" style="height:30%; background-image: url('https://source.unsplash.com/category/buildings');">
+    <div class="cover__filter"></div>
+		<div class="cover__caption">
+			<div class="cover__caption__copy white-text"> 
+				<h1>Primary message of the Home </h1>
+				<h3>Subtitle of the home page</h3> <br>
+				<a href="" class="btn medium-white"> Call to action</a>
+			</div>
+		</div>
+</div> 
+             
+<div class="page boxed rounded">
+       <div class="page__content">
+          <h1>Cover</h1>
+          <h3>with background image, title, subtitle and button</h3>
+           <p class="stable">A responsive cover with a cool background image with parallax effect, a title, a subtitle and a button. The image and the height can be modified inside of the style section.</p>
+<div class="code">&ltdiv class="cover parallax" style="height:30%; background-image: url('https://source.unsplash.com/category/buildings');"&gt
+    &ltdiv class="cover__filter"&gt&lt/div&gt
+    &ltdiv class="cover__caption"&gt
+        &ltdiv class="cover__caption__copy white-text"&gt 
+            &lth1&gtPrimary message of the Home &lt/h1&gt
+                &lth3&gtSubtitle of the home page&lt/h3&gt &ltbr&gt
+            &lta href="" class="btn medium-white"&gt Call to action&lt/a&gt
+        &lt/div&gt
+    &lt/div&gt
+&lt/div&gt </div>
+       </div>
+    </div>
+             
+
+             
+             
+<!-- Credits -->
+<div class="page boxed rounded">
+       <div class="page__content">
+          <h1>Credits</h1>
+           <p>Thanks to <a href="https://www.w3schools.com/">W3schools</a>, <a href="https://unsplash.com/">Unsplash</a>, <a href="https://unsplash.com/">CodePen</a>, <a href="https://github.com">GitHub</a>, <a href="https://stackoverflow.com/">StackOverflow</a> <a href="https://css-tricks.com/">Css-Tricks</a>, <a href="https://fonts.google.com/">Google Fonts</a>, <a href="https://flatuicolors.com/">FlatUiColors</a>, <a href="https://fontawesome.com/">FontAwesome</a>, <a href="https://jsfiddle.net/">JsFiddle</a>, <a href="https://freefrontend.com/">FreeFrontend</a>, <a href="http://brackets.io/">Brackets</a> and <a href="https://emmet.io/">Emmet</a></p>
+        </div>
+       </div>
+
+              <div class="footer">
+        <div class="footer__content boxed clearfix">
+        <div class="footer__content__left">
+            <p>Designed by <a href="https://twitter.com/mooonmatt"><i class="fas fa-moon"></i>moonmatt</a></p>
+        </div>
+                <div class="footer__content__right">
+            <a href="https://twitter.com/mooonmatt"><ul><i class="fab fa-twitter"></i></ul></a>
+            <a href="https://github.com/moonmatt/Mogi"><ul><i class="fab fa-github"></i></ul></a>
+            <a href="https://moonmatt.dev/"><ul><i class="fab fa-chrome"></i></ul></a>
+        </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+updateTheme();
+var select = document.querySelector("#themeBox");
+var selectOption = select.options[select.selectedIndex];
+var lastSelected = localStorage.getItem('select');
+
+if(lastSelected) {
+    select.value = lastSelected; 
+}
+select.onchange = function () {
+   lastSelected = select.options[select.selectedIndex].value;
+   console.log(lastSelected);
+   localStorage.setItem('select', lastSelected);
+    updateTheme();
+}
+function updateTheme() {
+    if(document.getElementById("dark").selected) { 
+        swapStyleSheet('css/dark.css') 
+    }
+    if(document.getElementById("light").selected) { 
+        swapStyleSheet('css/light.css') 
+    }
+    if(document.getElementById("mogi").selected) { 
+        swapStyleSheet('css/mogi.css') 
+    } 
+}
+updateTheme();  
+    </script>
+</body>

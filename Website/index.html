@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Mogi Framework - fast and free</title>
-    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/dark.css">
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="css/mogi.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
-
-    <script src="js/style.js"></script>
+<script src="js/style.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
@@ -24,11 +23,13 @@ function responsive() {
 </head>
 
 <div class="fixedbutton">
-<label class="switch" data-checked="Yes" data-unchecked="No">
-  <input type="checkbox" id="checkbox" checked onclick="updateTheme()" >
-  <span class="slider round"></span>
-</label>
+  <select id="themeBox" onclick="themeUpdate()">
+    <option value="Dark" id="dark" selected>Dark</option>
+    <option value="Light" id="light">Light</option>
+    <option value="Mogi" id="mogi">Mogi</option>
+  </select>
 </div>
+
 <body>
       <div class="header clearfix sticky" style="height: 60px;">
        <div class="header__content boxed">
@@ -45,13 +46,12 @@ function responsive() {
     </div>
     
     
-<div class="cover parallax" style="height:50%; background-image: url('https://source.unsplash.com/category/buildings');">
+<div class="cover parallax" style="height:90%; background-image: url('img/bg.jpg');">
 		<div class="cover__filter"></div>
 		<div class="cover__caption">
-			<div class="cover__caption__copy white-text"> 
-				<h1>Primary message of the Home </h1>
-				<h3>Subtitle of the home page</h3> <br>
-				<a href="" class="btn medium-white"> Call to action</a>
+			<div class="cover__caption__copy white-text">
+				<h1>Create websites with Mogi.</h1>
+				<h3>the first dark and light theme framwework</h3> <br>
 			</div>
 		</div>
 	</div>
@@ -59,26 +59,23 @@ function responsive() {
         <div class="cards__card shadow">
         <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img">
         <div class="cards__card__content">
-            <h1>Title</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
-            <a href="" class="btn medium-white"> Call to action</a>
+            <h1>Customizable</h1>
+            <p>If you know a little bit of CSS you will be able to customize Mogi however you want, changing elements, classes and creating themes. Every component is well documented and OpenSource, and it is going to help you a lot, trust me.</p>
         </div>
         </div>
     <div class="cards__card shadow">
         <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img">
         <div class="cards__card__content">
-            <h1>Title</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
-            <a href="" class="btn medium-white"> Call to action</a>
+            <h1>Responsive</h1>
+            <p>Mogi is completely responsive, this means that all the websites made with it can be viewed perfectly from every kind of device, including tablets and smartphones.</p>
         </div>
         </div>
         
     <div class="cards__card shadow">
-        <img src="https://source.unsplash.com/category/people/400x260" class="cards__card__img">
+        <img src="https://i0.wp.com/doist.com/blog/wp-content/uploads/sites/3/2018/12/1_dhfgdsjn9F1OGm1VhOvesQ@2x.png" class="cards__card__img">
         <div class="cards__card__content">
-            <h1>Title</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem laboriosam, cupiditate consectetur reprehenderit numquam. Ut facere accusamus veniam, repudiandae aut repellendus, fugiat velit! Mollitia quibusdam voluptas rem, suscipit omnis incidunt!</p>
-            <a href="" class="btn medium-white"> Call to action</a>
+            <h1>Multi theme</h1>
+            <p>On Mogi there are 3 default themes which can be selected by users: light, dark and Mogi. If you want you can create your own following the documentation.</p>
         </div>
         </div>
     </div>
@@ -89,7 +86,8 @@ function responsive() {
           <h2></h2>
            <p class="stable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam amet quam quo magnam deleniti culpa illo iste libero officia cum incidunt repudiandae in ea, accusantium, laborum, placeat ipsum ex iusto!</p>
            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dolore odit vel, doloribus dolores veritatis illum iusto nemo iste magni corporis corrupti explicabo veniam eius officia culpa sequi quos cumque.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium dolore odit vel, doloribus dolores veritatis illum iusto nemo iste magni corporis corrupti explicabo veniam eius officia culpa sequi quos cumque.
+            <a href="">ciao</a></p>
        </div>
    </div>
 
@@ -110,25 +108,31 @@ function responsive() {
 
 
 <script>
-function load() {
-    var checked = JSON.parse(localStorage.getItem('checkbox'));
-    document.getElementById("checkbox").checked = checked;
+updateTheme();
+var select = document.querySelector("#themeBox");
+var selectOption = select.options[select.selectedIndex];
+var lastSelected = localStorage.getItem('select');
+
+if(lastSelected) {
+    select.value = lastSelected; 
 }
-function save() {
-    var checkb = document.getElementById('checkbox');
-    localStorage.setItem('checkbox', checkbox.checked);
+select.onchange = function () {
+   lastSelected = select.options[select.selectedIndex].value;
+   console.log(lastSelected);
+   localStorage.setItem('select', lastSelected);
+    updateTheme();
 }
 function updateTheme() {
-    var checkBox = document.getElementById("checkbox");
-    if(checkBox.checked) { 
+    if(document.getElementById("dark").selected) { 
         swapStyleSheet('css/dark.css') 
-        save();
-    } else {
-        swapStyleSheet('css/light.css')
-        save();
-   } 
+    }
+    if(document.getElementById("light").selected) { 
+        swapStyleSheet('css/light.css') 
+    }
+    if(document.getElementById("mogi").selected) { 
+        swapStyleSheet('css/mogi.css') 
+    } 
 }
-load();
-updateTheme();
+updateTheme();  
     </script>
 </body>
