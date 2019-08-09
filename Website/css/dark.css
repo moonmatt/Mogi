@@ -148,7 +148,6 @@ code
 grid
 -*/
 .grid {
-    margin: 20px;
 }
 .grid-2 {
     display: grid;
@@ -427,7 +426,17 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
+textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.015em;
+    resize: none;
+    outline: none;
+}
 
 /*-
 sticky

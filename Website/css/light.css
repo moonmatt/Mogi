@@ -420,6 +420,7 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1.015em;
+  background-color: white;
 }
 input[type=submit] {
   width: 100%;
@@ -429,7 +430,17 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
+textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.015em;
+    resize: none;
+    outline: none;
+}
 
 /*-
 sticky
