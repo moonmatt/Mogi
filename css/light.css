@@ -21,6 +21,7 @@ body {
     width: 100%;
     height: auto;
 }
+
 .fixedbutton {
     position: fixed;
     z-index: 999999999999999999999999999999;
@@ -28,70 +29,21 @@ body {
     right: 0;
     margin: 10px;
 }
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+#themeBox {
+    width: auto;
+    margin: 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.015em;
+    float: right;
 }
-
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.badge {
+    width: 25px;
+    height: 15px;
+    margin: 5px;
+    float: right;
 }
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-body {
-  opacity: 1;
-  transition: 0.7s opacity;
-}
-
 /*-
 medium buttons
 -*/
@@ -181,11 +133,20 @@ button {
     -moz-appearance: none;
 }
 
+/*-
+code
+-*/
 .code {
-    background-color: #DCDDE1;
-    color: #2f3640;
-    padding: 2px;
+    background-color: #1e272e;
+    color: #d2dae2;
+    padding: 10px;
     margin-top: 10px;
+    resize: none;
+    border: 1px solid gray;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: 'Fira Code', monospace;
+
 }
 /*-
 grid
@@ -327,14 +288,16 @@ light header
 .header {
     background-color: #DCDDE1;
     z-index: 9999999;
+    height: 60px;
 }
 .header__content {
     color: #2f3640;
 }
 .header__logo {
     float: left;
+    margin: 15px;
+    margin-left: 5px;
     display: block;
-    padding: 20px;
 }
 .header__logo a {
     text-decoration: none;
@@ -345,13 +308,19 @@ light header
 }
 .header__logo__img {
     float: left;
-    padding: 10px;
+    height: 40px;
+    margin: 10px;
+    margin-right: 0px;
+}
+.header__logo__img img {
+    width: 40px;
+    height: 40px;
 }
 .header__menu__item {
     display: inline-block;
     text-decoration: none;
     color: #34495e;
-    padding: 20px;
+    padding: 17.5px;
 }
 .header__menu__item:hover {
     background-color: #2f3640;
@@ -403,6 +372,9 @@ light footer
     padding-bottom: 40px;
 }
 .footer__content__left {
+    float: left;
+}
+.footer__content__left p {
     float: left;
 }
 .footer__content__right {
@@ -457,6 +429,7 @@ input, select {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1.015em;
+  background-color: white;
 }
 input[type=submit] {
   width: 100%;
@@ -466,7 +439,17 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
+textarea {
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1.015em;
+    resize: none;
+    outline: none;
+}
 
 /*-
 sticky
@@ -485,7 +468,9 @@ boxed
     margin-right: 20%;
 }
 
-
+.responsiveicon {
+    display: none;
+}
 /*-----------------------------
 Tablet
 -----------------------------*/
@@ -514,6 +499,7 @@ Smartphone
     .header__menu {
         text-align: center;
         width: 100%;
+        display: none;
     }
     .no-mobile {
         display: none;
@@ -542,6 +528,14 @@ Smartphone
         margin-bottom: 20px;
         border-radius: 0;
     }
+    .mystyle {
+        display: grid;
+        position: absolute;
+        margin-top: 60px;
+        background-color: #DCDDE1;
+        width: 100%;
+        
+    }
     .rounded {
         border-radius: 15px;
     }
@@ -555,6 +549,10 @@ Smartphone
         width: 100%;
         margin: 0;
     }
+        .responsiveicon {
+    display: inline-block;
+    float: right;
+}
 }
 
 
