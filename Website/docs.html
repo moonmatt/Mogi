@@ -364,6 +364,71 @@ function responsive() {
     &lt;/div&gt;</div>
     </div>
 </div>
+
+
+<div class="page boxed rounded">
+    <div class="page__content">
+        <h1>Random title</h1>
+        <h3>Subtitle</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam amet quam quo magnam deleniti culpa illo iste libero officia cum incidunt repudiandae in ea, accusantium, laborum, placeat ipsum ex iusto!</p>
+    </div>
+</div>
+
+<div class="page boxed rounded">
+            <div class="page__content">
+               <h1>Page</h1>
+               <h3>with title, subtitle and text</h3>
+                <p class="stable">A responsive page with title, subtitle and text. Inside of it you can put whatever you want</p>
+     <div class="code">&lt;div class="page boxed rounded"&gt;
+    &lt;div class="page__content"&gt;
+        &lt;h1&gt;Random title&lt;/h1&gt;
+        &lt;h3&gt;Subtitle&lt;/h3&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam amet quam quo magnam deleniti culpa illo iste libero officia cum incidunt repudiandae in ea, accusantium, laborum, placeat ipsum ex iusto!&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+        </div>
+</div>
+
+<div class="page boxed rounded">
+        <div class="page__content">
+           <h1>Classes</h1>
+           <h3>custom element classes</h3>
+            <p class="stable">Here's a list of classes that you can add to almost every element</p>
+ <div class="code">code &lt;!-- Gives paragraph a code looking --&gt;    
+ 
+boxed &lt;!-- Puts the content inside of a box --&gt;    
+        
+shadow &lt;!-- Puts shadows behind the elements --&gt;
+       
+light-text &lt;!-- The text becomes light --&gt;   
+        
+dark-text &lt;!-- The text becomes dark --&gt;   
+        
+stable &lt;!-- Makes a paragraph a little bit bigger --&gt;  
+        
+parallax &lt;!-- Gives a background image a parallax effect --&gt; 
+        
+sticky &lt;!-- The element becomes sticky (used for headers) --&gt; </div>
+    </div>
+</div>
+
+
+<div class="page boxed rounded">
+        <div class="page__content">
+            <h1>Create a custom theme</h1>
+            <h3>how to create your personal theme</h3>
+            <p>First of all create a file inside of the css folder, called yourname.css <br>
+            Then copy the code from another theme (like dark.css or light.css) and paste it in your page. <br>
+            At this point you can start editing the style however you want. <br>
+            Once you've finished this, go to the bottom of every page (the html file), look for the "script", then add another if statement like this:   </p>
+            <div class="code">if(document.getElementById("yourtheme").selected) { 
+        swapStyleSheet('css/yourtheme.css') 
+}</div>
+<p>Then go to the top of the page, you look for the fixedbutton id, and then add an option with your theme name</p>
+<div class="code">&lt;option value="themeName" id="themeName"&gt;themeName&lt;/option&gt;</div>
+</div>
+</div>
+
               <div class="footer">
         <div class="footer__content boxed clearfix">
         <div class="footer__content__left">
