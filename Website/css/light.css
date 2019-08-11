@@ -38,6 +38,12 @@ body {
     font-size: 1.015em;
     float: right;
 }
+.badge {
+    width: 25px;
+    height: 15px;
+    margin: 5px;
+    float: right;
+}
 /*-
 medium buttons
 -*/
@@ -366,6 +372,9 @@ light footer
     padding-bottom: 40px;
 }
 .footer__content__left {
+    float: left;
+}
+.footer__content__left p {
     float: left;
 }
 .footer__content__right {

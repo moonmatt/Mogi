@@ -1,7 +1,10 @@
 <?php
+    $ok = "yes";
     $num1 = rand(1,10);
     $num2 = rand(3,15);
     $result = $num1 + $num2;
+    $bname = "Early Supporter";
+    $blink = "https://i.ibb.co/545y0vF/icon.jpg";
     $maxbadges = 5;
     $b = ++$maxbadges;
     $file = "b.txt";
@@ -11,11 +14,33 @@
 if (isset($_POST['submit'])) {
     $number = $_POST['number'];
     if ($number = $result) {
-        echo "this worked";
         if ($badgenum < $b){
         $a = ++$badgenum;
         file_put_contents($file, $a);
         fclose($myfile);
+        $email = $_POST['email'];
+        $name = $_POST['name'];
+        $ulink = "https://mogi.moonmatt.dev/u/" . $name;
+        $sub = "Hey, you got the badge!";
+        $msg = "
+        <html>
+        <head>
+        <title>Congratulation, you got the badge!</title>
+        </head>
+        <body>
+        <h1>Congratulations " . $name . "</h1>
+        <h3>You got the " . $bname . " badge!</h3>
+        <hr>
+        <p>In order to integrate it inside of your footer, just copy and paste the following code. <br>
+        Insert it inside of the class called 'footer__content__left'.</p><br><br>
+        <code>&lt;a href='" . $ulink . "'&gt;&lt;img src='". $blink ."' class='badge' title='".$bname."'&gt;&lt;/a&gt;</code>
+        </body>
+        </html>
+        ";
+        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $rec = $email;
+        mail($rec,$sub,$msg,$headers);
         header('location: yay.php');
         } else {
         header('location: sorry.php');
@@ -72,11 +97,11 @@ function responsive() {
     </div>
     
     
-<div class="cover parallax" style="height:30%; background-image: url('../img/bg.jpg');">
+<div class="cover parallax" style="height:30%; background-image: url('../img/badgebg.jpg');">
 		<div class="cover__filter"></div>
 		<div class="cover__caption">
 			<div class="cover__caption__copy white-text">
-                <h1>Mogi is now released</h1>
+                <h1><?php echo $bname;?> badge is now out!</h1>
                 <?php 
                 if ($ab == 1){
                     echo "There is only 1 badge left";
@@ -95,12 +120,29 @@ function responsive() {
           <hr>
           <form action="" method="POST">
           <label for="name">Your username</label>
-          <input type="text" name="name" placeholder="es moonmatt" required>
+          <input type="text" name="name" placeholder="es moonmatt" required 
+          <?php
+            if($ok != "yes"){
+                echo "disabled";
+            }
+            ?>>
           <label for="name">Your email</label>
-          <input type="email" name="email" placeholder="es hello@moonmatt.dev" required>
+          <input type="email" name="email" placeholder="es hello@moonmatt.dev" required <?php
+            if($ok != "yes"){
+                echo "disabled";
+            }
+            ?>>
           <label for="number">Human verification</label>
-          <input type="number" name="number" min="1" max="50" placeholder="<?php echo $num1 . " + " . $num2?>">
-          <input type="submit" name="submit" value="Submit">
+          <input type="number" name="number" min="1" max="50" placeholder="<?php echo $num1 . " + " . $num2?>" <?php
+            if($ok != "yes"){
+                echo "disabled";
+            }
+            ?>>
+          <input type="submit" name="submit" value="Submit" <?php
+            if($ok != "yes"){
+                echo "disabled";
+            }
+            ?>>
           </form>
        </div>
    </div>
@@ -108,7 +150,7 @@ function responsive() {
               <div class="footer">
         <div class="footer__content boxed clearfix">
         <div class="footer__content__left">
-            <p>Designed by <a href="https://twitter.com/mooonmatt"><i class="fas fa-moon"></i>moonmatt</a></p>
+            <p>Designed by <a href="https://twitter.com/mooonmatt"><i class="fas fa-moon"></i>moonmatt</a></p><a href='https://mogi.moonmatt.dev/u/matteo'><img src='https://i.ibb.co/545y0vF/icon.jpg' class='badge' title='Early Supporter'></a>
         </div>
                 <div class="footer__content__right">
             <a href="https://twitter.com/mooonmatt"><ul><i class="fab fa-twitter"></i></ul></a>

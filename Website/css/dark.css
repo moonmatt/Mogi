@@ -6,6 +6,12 @@ Default
     box-sizing: border-box;
     padding: 0;
 }
+.badge {
+    width: 25px;
+    height: 15px;
+    margin: 5px;
+    float: right;
+}
 html {
     font-family: 'Poppins', sans-serif;
     font-size: 1.015em;
@@ -148,6 +154,7 @@ code
 grid
 -*/
 .grid {
+    margin: 20px;
 }
 .grid-2 {
     display: grid;
@@ -364,6 +371,9 @@ dark footer
 .footer__content__left {
     float: left;
 }
+.footer__content__left p {
+    float: left;
+}
 .footer__content__right {
     float: right;
 }
@@ -540,8 +550,6 @@ Smartphone
     float: right;
 }
 }
-
-
 /*-
 clearfix
 -*/
