@@ -1,27 +1,27 @@
 <?php
-    $ok = "yes";
-    $num1 = rand(1,10);
-    $num2 = rand(3,15);
-    $result = $num1 + $num2;
-    $btime = "25/08/2019 at 3pm";
-    $bname = "Early Supporter";
-    $blink = "https://i.ibb.co/545y0vF/icon.jpg";
-    $maxbadges = 5;
-    $b = ++$maxbadges;
-    $file = "b.txt";
-    $myfile = fopen($file, "r") or die("Unable to open file!");
-    $badgenum = fread($myfile,filesize($file));
-    $ab = $b - $badgenum;
+    $ok = "yes"; // YES if you want to give badges - NO if you don't want
+    $num1 = rand(1,10); // Random number from 1 to 10
+    $num2 = rand(3,15); // Random number from 3 to 15
+    $result = $num1 + $num2; // The result of the captcha
+    $btime = "25/08/2019 at 3pm"; // Time for the next give
+    $bname = "Early supporter";  // Title of the badge
+    $blink = "https://i.ibb.co/545y0vF/icon.jpg"; // Link of the badge image
+    $maxbadges = 5; // Number of the badges to give
+    $b = ++$maxbadges; // Adds 1 to the number of badges, because a file cannot be 0
+    $file = "b.txt"; // Name of the file where datas are hosted
+    $myfile = fopen($file, "r") or die("Unable to open file!"); // Opens the file
+    $badgenum = fread($myfile,filesize($file)); // Reads the file
+    $ab = $b - $badgenum; // The number of available badges
 if (isset($_POST['submit'])) {
-    $number = $_POST['number'];
-    if ($number = $result) {
-        if ($badgenum < $b){
-        $time = date("d-m-Y");
-        $email = $_POST['email'];
-        $name = $_POST['name'];
-        $ulink = "https://mogi.moonmatt.dev/u/" . $name;
-        $sub = "Hey, you got the badge!";
-        $msg = "
+    $number = $_POST['number']; // The number of available badges
+    if ($number = $result) { // Checks if the captcha is correct
+        if ($badgenum < $b){ // Checks if there are available badges
+        $time = date("d-m-Y"); // Gets the time
+        $email = $_POST['email']; // Gets the email from the form
+        $name = $_POST['name']; // Gets the name from the form
+        $ulink = "https://mogi.moonmatt.dev/u/" . $name; // Makes the link of the page
+        $sub = "Hey, you got the badge!"; // The title of the email
+        $msg = " 
         <html>
         <head>
         <title>Congratulation, you got the badge!</title>
@@ -35,11 +35,10 @@ if (isset($_POST['submit'])) {
         <code>&lt;a href='" . $ulink . "'&gt;&lt;img src='". $blink ."' class='badge' title='".$bname."'&gt;&lt;/a&gt;</code>
         </body>
         </html>
-        ";
+        "; // The body of the email
         $headers  = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-        $rec = $email;
-        $fname = $name . ".php";
+        $fname = $name . ".php"; // The fullname of the page (with .php)
         $data = '
         <!DOCTYPE html>
         <html lang="en">
@@ -52,8 +51,18 @@ if (isset($_POST['submit'])) {
         <script src="../js/style.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <title>'. $name. ' - Mogi Badges</title>
+
         </head>
         <body>
+
+        <div class="fixedbutton">
+        <select id="themeBox" onclick="themeUpdate()">
+          <option value="Dark" id="dark" selected>Dark</option>
+          <option value="Light" id="light">Light</option>
+          <option value="Mogi" id="mogi">Mogi</option>
+        </select>
+        </div>
+
         <div class="header clearfix sticky">
         <div class="header__content boxed">
                 <div class="header__logo__img" style="margin: 10px;">
@@ -62,8 +71,7 @@ if (isset($_POST['submit'])) {
          <div class="header__logo logo" style="padding-left: 0px;"><a href="#"><h3>Mogi</h3></a></div>
         </div>
         </div> 
-
-        <div class="cover parallax" style="height:90%; background-image: url("https://source.unsplash.com/daily");">
+        <div class="cover parallax" style="height:90%; background-image: url(../img/users.jpg);">
         <div class="cover__filter"></div>
         <div class="cover__caption">
         <div class="cover__caption__copy white-text"> 
@@ -94,33 +102,76 @@ if (isset($_POST['submit'])) {
         </div>
         </body>
         </html>
-        ';
-        if (file_exists($fname)) {
-            echo "The file $fname exists";
-        } else {
-            $handle = fopen($fname, 'w') or die('Cannot open file:  '.$fname); //implicitly creates file
-            $a = ++$badgenum;
-            file_put_contents($file, $a);
-            fclose($myfile);
-            mail($rec,$sub,$msg,$headers);
-            fwrite($handle, $data);
-            header('location: yay.php');
+        <script>
+        updateTheme();
+        var select = document.querySelector("#themeBox");
+        var selectOption = select.options[select.selectedIndex];
+        var lastSelected = localStorage.getItem("select");
+        
+        if(lastSelected) {
+            select.value = lastSelected; 
         }
-        } else {
-        header('location: sorry.php');
+        select.onchange = function () {
+           lastSelected = select.options[select.selectedIndex].value;
+           console.log(lastSelected);
+           localStorage.setItem("select", lastSelected);
+            updateTheme();
         }
+        function updateTheme() {
+            if(document.getElementById("dark").selected) { 
+                swapStyleSheet("../css/dark.css") 
+            }
+            if(document.getElementById("light").selected) { 
+                swapStyleSheet("../css/light.css") 
+            }
+            if(document.getElementById("mogi").selected) { 
+                swapStyleSheet("../css/mogi.css") 
+            } 
+        }
+        updateTheme();  
+            </script>
+            <script>
+        function responsive() {
+            if (document.getElementById("header__menu").classList != "mystyle") {
+                document.getElementById("header__menu").classList = "mystyle";
+            } else {
+                document.getElementById("header__menu").classList.remove("mystyle");
+                document.getElementById("header__menu").classList = "no-mobile";
+            }
+        }
+        </script>
+        '; // The code of the page
+        if (file_exists($fname)) { // If the page already exists
+            $ip = $name . " also has " . $bname . " badge"; // Content to add to the page
+            file_put_contents($fname, $ip, FILE_APPEND); // Adds content to the page
+            $a = ++$badgenum; // Removes a badge from the availables
+            file_put_contents($file, $a); // Removes a badge from the availables
+            fclose($myfile); // Closes the file
+            mail($email,$sub,$msg,$headers); // Sends the email
+            header("Location: yay.php"); // Redirects to yay.php
+        } else { // If the page doesn't exist
+            $handle = fopen($fname, 'w') or die('Cannot open file:  '.$fname); // Creates the page
+            $a = ++$badgenum; // Removes a badge from the availables
+            file_put_contents($file, $a); // Removes a badge from the availables
+            fclose($myfile); // Closes the file
+            mail($email,$sub,$msg,$headers); // Sends the email
+            fwrite($handle, $data); // Writes the file
+            header("Location: yay.php"); // Redirects to yay.php
+        }
+    }
     } else {
-        echo "this didn't work";
+        header("Location: sorry.php");
+        echo "<script type='text/javascript'>alert('You have failed the Human Verification, try again!');</script>";
     }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mogi Framework - fast and free</title>
-    <link id="pagestyle" rel="stylesheet" type="text/css" href="..\css\mogi.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Mogi Framework - fast and free</title>
+<link id="pagestyle" rel="stylesheet" type="text/css" href="..\css\mogi.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
 <script src="../js/style.js"></script>
@@ -185,20 +236,20 @@ function responsive() {
           <hr>
           <form action="" method="POST">
           <label for="name">Your username</label>
-          <input type="text" name="name" placeholder="es moonmatt" required 
+          <input type="text" name="name" placeholder="es moonmatt" required onkeyup="url(this)" 
           <?php
             if($ok != "yes"){
                 echo "disabled";
             }
             ?>>
           <label for="name">Your email</label>
-          <input type="email" name="email" placeholder="es hello@moonmatt.dev" required <?php
+          <input type="email" name="email" placeholder="es hello@moonmatt.dev" required onkeyup="url(this)" <?php
             if($ok != "yes"){
                 echo "disabled";
             }
             ?>>
           <label for="number">Human verification</label>
-          <input type="number" name="number" min="1" max="50" placeholder="<?php echo $num1 . " + " . $num2?>" <?php
+          <input type="number" name="number" min="1" max="50" placeholder="<?php echo $num1 . " + " . $num2?>" onkeyup="url(this)" <?php
             if($ok != "yes"){
                 echo "disabled";
             }
@@ -257,7 +308,12 @@ function responsive() {
 
 
 
-
+    <script>
+function url(input) {
+    var regex = /[^- a-z 0-9 _ : / . = # & ? ! è é à ù ò @]/gi;
+    input.value = input.value.replace(regex, "");
+}
+</script>
 <script>
 updateTheme();
 var select = document.querySelector("#themeBox");
