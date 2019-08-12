@@ -26,7 +26,7 @@
             echo "Succes!";
             if (isset($_POST['submit'])) {
                 $name = $_POST['name'];
-                if ($name == "index" || $name == "error" || $name == "yay") {
+                if ($name == "index" || $name == "error" || $name == "yay" || $name == "panel") {
                     header("Location: error.php?you-cannot-use-this-name"); // Redirects to error.php
                     die();
                 }
@@ -198,7 +198,7 @@
 <head>
 <meta charset="UTF-8">
 <script src='https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>'></script>
-<title>Mogi Framework - fast and free</title>
+<title>Badges - Mogi Framework</title>
 <link id="pagestyle" rel="stylesheet" type="text/css" href="..\css\mogi.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
