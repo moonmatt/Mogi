@@ -151,9 +151,6 @@ code
 /*-
 grid
 -*/
-.grid {
-    margin: 20px;
-}
 .grid-2 {
     display: grid;
     width: 50%;

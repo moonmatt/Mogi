@@ -1,4 +1,17 @@
-<title>Success - Mogi Framework</title>
+<?php
+$error = "There was an error, try again!";
+if (strpos($_SERVER['REQUEST_URI'], "no-badges-left") !== false){
+    $error = "There are no badges left anymore";
+    }
+if (strpos($_SERVER['REQUEST_URI'], "you-already-have-this-badge") !== false){
+    $error = "You already have this badge";
+    }
+if (strpos($_SERVER['REQUEST_URI'], "you-cannot-use-this-name") !== false){
+    $error = "You cannot use this name";
+    }
+?>
+
+<title>Error - Mogi Framework</title>
 <link id="pagestyle" rel="stylesheet" type="text/css" href="..\css\mogi.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
@@ -25,12 +38,12 @@ function responsive() {
 </div>
 
 
-<div class="cover parallax" style="height:100%; background-image: url('../img/yay.jpg');">
+<div class="cover parallax" style="height:100%; background-image: url('../img/error.jpg');">
     <div class="cover__filter"></div>
     <div class="cover__caption">
         <div class="cover__caption__copy white-text"> 
             <h1>Pfff, there was an error</h1>
-                <h3>Try again</h3> <br>
+                <h3><?php echo $error; ?></h3> <br>
         </div>
     </div>
 </div> 
