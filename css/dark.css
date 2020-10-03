@@ -1,16 +1,15 @@
 /*-----------------------------
+Fonts
+-----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+/*-----------------------------
 Default
 -----------------------------*/
 * {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-}
-.badge {
-    width: 25px;
-    height: 15px;
-    margin: 5px;
-    float: right;
 }
 html {
     font-family: 'Poppins', sans-serif;
@@ -34,17 +33,68 @@ body {
     right: 0;
     margin: 10px;
 }
-#themeBox {
-    width: auto;
-    margin: 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.015em;
-    float: right;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
-a {
-    color: white;
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+body {
+  opacity: 1;
+  transition: 0.7s opacity;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 /*-
 medium buttons
@@ -139,16 +189,10 @@ button {
 code
 -*/
 .code {
-    background-color: #1e272e;
-    color: #d2dae2;
-    padding: 10px;
+    background-color: #333;
+    color: darkgray;
+    padding: 2px;
     margin-top: 10px;
-    resize: none;
-    border: 1px solid gray;
-    overflow-x: auto;
-    white-space: pre;
-    font-family: 'Fira Code', monospace;
-
 }
 /*-
 grid
@@ -314,7 +358,6 @@ dark header
 .header {
     background-color: #333;
     z-index: 999999999;
-    height: 60px;
 }
 .header__content {
     color: #f5f6fa;
@@ -322,8 +365,7 @@ dark header
 .header__logo {
     float: left;
     display: block;
-    margin: 15px;
-    margin-left: 5px;
+    padding: 20px;
 }
 .header__logo a {
     text-decoration: none;
@@ -331,13 +373,7 @@ dark header
 }
 .header__logo__img {
     float: left;
-    height: 40px;
-    margin: 10px;
-    margin-right: 0px;
-}
-.header__logo__img img {
-    width: 40px;
-    height: 40px;
+    padding: 10px;
 }
 .header__menu {
     float: right;
@@ -346,7 +382,7 @@ dark header
     display: inline-block;
     text-decoration: none;
     color: white; 
-    padding: 17.5px;
+    padding: 20px;
 }
 .header__menu__item:hover {
     background-color: #000;
@@ -369,9 +405,6 @@ dark footer
     padding-bottom: 40px;
 }
 .footer__content__left {
-    float: left;
-}
-.footer__content__left p {
     float: left;
 }
 .footer__content__right {
@@ -436,17 +469,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-textarea {
-    width: 100%;
-    padding: 10px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1.015em;
-    resize: none;
-    outline: none;
-}
+
 
 /*-
 sticky
@@ -465,9 +488,7 @@ boxed
     margin-right: 20%;
 }
 
-.responsiveicon {
-    display: none;
-}
+
 /*-----------------------------
 Tablet
 -----------------------------*/
@@ -487,15 +508,15 @@ Smartphone
         margin: 0;
     }
     .header__logo {
+        width: 100%;
         text-align: center;
     }
     .header__menu__item {
-     display: inline-block;
+        display: inline-block;
     }
     .header__menu {
         text-align: center;
-        background-color: #333;
-        display: none;
+        width: 100%;
     }
     .no-mobile {
         display: none;
@@ -520,14 +541,6 @@ Smartphone
         display: block;
         text-align: center;
     }
-    .mystyle {
-        display: grid;
-        position: absolute;
-        margin-top: 60px;
-        background-color: #333;
-        width: 100%;
-        
-    }
     .page {
         width: 90%;
         margin: 5%;
@@ -545,11 +558,9 @@ Smartphone
         width: 100%;
         margin: 0;
     }
-    .responsiveicon {
-    display: inline-block;
-    float: right;
 }
-}
+
+
 /*-
 clearfix
 -*/
@@ -572,3 +583,5 @@ clearfix
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
+
+
